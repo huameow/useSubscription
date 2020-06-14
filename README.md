@@ -1,4 +1,4 @@
-# utils
+# create a Subscription by hook
 ## how to use
 ### 1. install it
 ```
