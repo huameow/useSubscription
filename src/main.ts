@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 
 const useForceUpdate = () => useReducer((state) => !state, false)[1];
 
-export const createSubscription = (reducer, initialState) => {
+export const createSubscriptionHook = (reducer, initialState) => {
   const subscribers = [];
   let state = initialState;
   const dispatch = (action) => {

@@ -7,7 +7,9 @@ yarn add @huameow/hook-subscription
 
 ### 2. import it
 ```
-import {useSubscription} from '@huameow/hook-subscription';
+import {createSubscriptionHook} from '@huameow/hook-subscription';
+
+
 
 ```
 ### example
