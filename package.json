@@ -1,5 +1,5 @@
 {
-  "name": "@huameow/useSubscription",
+  "name": "@huameow/hook-subscription",
   "version": "0.0.1",
   "description": "subscription",
   "main": "lib/bundle.cjs.js",
