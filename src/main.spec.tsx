@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitForElement } from "@testing-library/react";
 import { screen } from '@testing-library/dom'
-import {useSubscription} from './main';
+import {createSubscription} from './main';
 
 const initialState = 0;
 const reducer = (state, action) => {
@@ -26,8 +26,8 @@ const Counter = ({ count, dispatch }) => (
   </div>
 );
 
-const useCount1 = useSubscription(reducer, initialState);
-const useCount2 = useSubscription(reducer, initialState);
+const useCount1 = createSubscription(reducer, initialState);
+const useCount2 = createSubscription(reducer, initialState);
 
 const Counter1 = () => {
   const [count, dispatch] = useCount1();

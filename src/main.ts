@@ -2,7 +2,7 @@ import { useEffect, useReducer, useState } from "react";
 
 const useForceUpdate = () => useReducer((state) => !state, false)[1];
 
-export const useSubscription = (reducer, initialState) => {
+export const createSubscription = (reducer, initialState) => {
   const subscribers = [];
   let state = initialState;
   const dispatch = (action) => {
@@ -24,9 +24,4 @@ export const useSubscription = (reducer, initialState) => {
     return [state, dispatch];
   };
   return useSharedState;
-};
-
-export const useTest = () => {
-  const [state, setState] = useState(0);
-  return [state, setState];
 };
