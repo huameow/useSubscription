@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 
 const useForceUpdate = () => useReducer((state) => !state, false)[1];
 
@@ -24,4 +24,9 @@ export const useSubscription = (reducer, initialState) => {
     return [state, dispatch];
   };
   return useSharedState;
+};
+
+export const useTest = () => {
+  const [state, setState] = useState(0);
+  return [state, setState];
 };
