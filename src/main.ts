@@ -1,20 +1,25 @@
-import { useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, Dispatch, Reducer } from "react";
 
 const useForceUpdate = () => useReducer((state) => !state, false)[1];
 
-export const createSubscriptionHook = (reducer, initialState) => {
-  const subscribers = [];
-  let state = initialState;
-  const dispatch = (action) => {
+type Callback = () => unknown;
+
+export const createSubscriptionHook = <T, A>(
+  reducer: Reducer<T, A>,
+  initialState: T
+): (() => [T, Dispatch<A>]) => {
+  const subscribers: Callback[] = [];
+  let state: T = initialState;
+  const dispatch: Dispatch<A> = (action: A) => {
     state = reducer(state, action);
     subscribers.forEach((callback) => callback());
   };
-  const useSharedState = () => {
+  const useSharedState = (): [T, Dispatch<A>] => {
     const forceUpdate = useForceUpdate();
     useEffect(() => {
       const callback = () => forceUpdate();
       subscribers.push(callback);
-      callback(); // in case it's already updated
+      callback();
       const cleanup = () => {
         const index = subscribers.indexOf(callback);
         subscribers.splice(index, 1);
