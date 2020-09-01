@@ -1,6 +1,6 @@
 {
   "name": "@huameow/hook-subscription",
-  "version": "0.0.9",
+  "version": "0.0.8",
   "description": "subscription",
   "main": "lib/bundle.cjs.js",
   "module": "lib/bundle.esm.js",
@@ -61,11 +61,7 @@
     }
   },
   "lint-staged": {
-    "*.{ts,js}": [
-      "eslint -c .eslintrc.js"
-    ],
-    "*.{ts,js,json}": [
-      "prettier --write"
-    ]
+    "*.{ts,js}": ["eslint -c .eslintrc.js"],
+    "*.{ts,js,json}": ["prettier --write"]
   }
 }

@@ -13,9 +13,6 @@ export const createSubscriptionHook = <T, A>(
   const dispatch: Dispatch<A> = (action: A) => {
     state = reducer(state, action);
     subscribers.forEach((callback) => callback());
-    return new Promise((resolve) => {
-      resolve(state);
-    });
   };
   const useSharedState = (): [T, Dispatch<A>] => {
     const forceUpdate = useForceUpdate();
