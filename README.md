@@ -13,4 +13,4 @@ import {createSubscriptionHook} from '@huameow/hook-subscription';
 
 ```
 ### example
-[demo](https://codesandbox.io/s/huameowhook-subscription-example-pgxzi?file=/src/examole.js)
+[demo](https://codesandbox.io/s/huameowhook-subscription-example-pgxzi)

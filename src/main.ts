@@ -14,6 +14,7 @@ export const createSubscriptionHook = <T, A>(
     state = reducer(state, action);
     subscribers.forEach((callback) => callback());
     return new Promise((resolve) => {
+      console.log("dispatch", state);
       resolve(state);
     });
   };
