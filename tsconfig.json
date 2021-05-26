@@ -1,21 +1,50 @@
 {
   "compilerOptions": {
-    "jsx": "react",
-    "strict": true,
-    "strictNullChecks": false,
-    "allowJs": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "target": "es6",
-    "module": "commonjs",
-    "noImplicitAny": false,
-    "removeComments": true,
-    "skipLibCheck": true,
-    "preserveConstEnums": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
+
+    /* Basic Options */
+    "target": "es2017",
+    "module": "esnext",
+    "declaration": true,
+    "declarationMap": true,
     "sourceMap": true,
-    "downlevelIteration": true,
-    "lib": ["es6", "dom"],
-    "types": ["jest"]
+    "composite": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "strictBindCallApply": true,
+
+    /* Additional Checks */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+
+    /* 实验支持  */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    /* Cli Options */
+    "pretty": true,
+
+    "jsx": "react",
+    "allowJs": true,
+
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": ["src/**/*", "**/*.spec.ts"],
   "exclude": ["node_modules"]
